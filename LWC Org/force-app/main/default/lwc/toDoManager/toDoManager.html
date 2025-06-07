@@ -1,0 +1,26 @@
+<template>
+  <div class="slds-grid slds-gutters">
+    <div class="slds-col">
+      <lightning-card title="Add Task:">
+        <div class="slds-p-around_xx-small">
+          <lightning-input label="Task Name" name="taskName" onchange={handleChange} value={taskName} message-when-value-missing = {missingMessage}></lightning-input>
+          <lightning-input type="date" name="taskDate" label="Task Date" onchange={handleChange} value={taskDate}></lightning-input>
+          <div>
+            <lightning-button-icon class="slds-p-around_xx-small" icon-name="utility:check"  variant="brand" alternative-text="Settings" onclick={addTask}></lightning-button-icon>
+          <lightning-button-icon class="slds-p-around_xx-small" onclick={resetTask} icon-name="action:reset_password"  variant="destructive" alternative-text="Settings"></lightning-button-icon>
+          </div>
+        </div>
+      </lightning-card>
+    </div>
+    <div class="slds-col">
+      <lightning-card title="Tasks In Progress:" class="slds-p-around_xx-small">
+
+      </lightning-card>
+    </div>
+    <div class="slds-col">
+      <lightning-card title="Completed Tasks:" class="slds-p-around_xx-small">
+
+      </lightning-card>
+    </div>
+  </div>
+</template>

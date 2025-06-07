@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Lookup">
+      <div class="slds-p-around_x-small">
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="combobox-id-2" id="combobox-label-id-6">My Lookup</label>
+          <div class="slds-form-element__control">
+          <div class="slds-combobox_container">
+          <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+          <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+          <input type="text" class="slds-input slds-combobox__input slds-has-focus" id="combobox-id-2" aria-autocomplete="list" aria-controls="listbox-id-2" aria-expanded="true" aria-haspopup="listbox" role="combobox" placeholder="Search..."
+          />
+          <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+          <lightning-icon icon-name="utility:search" size="x-small"></lightning-icon>
+          <!-- <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+          </svg> -->
+          </span>
+          </div>
+          <div id="listbox-id-2" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox" tabindex="0" aria-busy="false">
+          <template lwc:if={accsFromOrg.data}>
+            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+              <template for:each={accsFromOrg.data} for:item="record">
+                <li key={record.Id} role="presentation" class="slds-listbox__item">
+                  <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                    <span class="slds-media__figure slds-listbox__option-icon">
+                      <span class="slds-icon_container slds-icon-standard-account">
+                        <lightning-icon icon-name={recordIcon} size="small"></lightning-icon>
+                        <!-- <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+                      </svg> -->
+                      </span>
+                    </span>
+                    <span class="slds-media__body">
+                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">{record.Name}</span>
+                    <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">{objectLabel} • {record.BillingCity}, {record.BillingState}</span>
+                    </span>
+                  </div>
+                  </li>
+              </template>
+            </ul>
+          </template>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+      </div>
+    </lightning-card>
+</template>

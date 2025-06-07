@@ -1,0 +1,25 @@
+<template>
+  <template lwc:if={accountsFromApex}>
+    <div style="height: 300px;">
+      <lightning-datatable
+              key-field="Id"
+              data={accountsFromApex.data}
+              columns={columns}>
+      </lightning-datatable>
+    </div>
+  </template>
+    <template lwc:if={accs}>
+      <lightning-card title="Default Rating HOT">
+        <div style="height: 300px;">
+          <lightning-datatable
+                  key-field="Id"
+                  data={accHot}
+                  columns={columns1}>
+          </lightning-datatable>
+          </div>
+      </lightning-card>
+    </template>
+    <template lwc:elseif={error}>
+      <c-error-panel errors={error}></c-error-panel>
+    </template>
+</template>
