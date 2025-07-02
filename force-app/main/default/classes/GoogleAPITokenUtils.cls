@@ -5,6 +5,7 @@ public with sharing class GoogleAPITokenUtils {
     public static PageReference getAuthCode(){
         Salesforce_Config__mdt config = Salesforce_Config__mdt.getInstance('GoogleCredentials');
        if (config != null){
+        // https://accounts.google.com/o/oauth2/v2/auth?client_id=1011912960302-mv1btrl2umvuhbkk9jlee1j27qt1v21h.apps.googleusercontent.com&redirect_uri=https://login.salesforce.com&response_type=code&scope=openid profile
         String authURL = config.authurl__c +'?client_id='+config.clientId__c+'&redirect_uri='+config.redirect_URL__c+'&response_type=code&scope=openid profile';
         return new PageReference(authURL);
        }else{
